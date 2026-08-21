@@ -45,3 +45,5 @@ next-env.d.ts
 /os-coding-os_1/
 /.agents/
 /.gemini/
+
+.vercel

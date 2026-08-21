@@ -134,9 +134,12 @@ export default async function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {therapists.map((th) => (
-            <div key={th.id} className="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col items-center text-center">
-              <div className="w-24 h-24 relative rounded-full overflow-hidden border-2 border-emerald-500/50 mb-4">
+          {therapists.filter((th) => th.isActive).map((th) => (
+            <div
+              key={th.id}
+              className="group bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col items-center text-center cursor-pointer hover:border-emerald-500/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-950/40 transition-all duration-200"
+            >
+              <div className="w-24 h-24 relative rounded-full overflow-hidden border-2 border-emerald-500/50 mb-4 group-hover:border-emerald-400/80 transition-all duration-200">
                 <Image
                   src={th.avatarUrl || ""}
                   alt={th.name}
@@ -151,6 +154,9 @@ export default async function HomePage() {
               <div className="w-full pt-3 border-t border-slate-800 text-xs text-slate-500 flex justify-between">
                 <span>Khung giờ: 08:00 – 20:00</span>
                 <span className="text-amber-400 font-semibold">Nghỉ 12h-14h</span>
+              </div>
+              <div className="mt-3 w-full py-2 rounded-lg bg-emerald-600/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold text-center group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 transition-all flex items-center justify-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5" /> Đặt lịch với KTV này <ArrowRight className="w-3.5 h-3.5" />
               </div>
             </div>
           ))}

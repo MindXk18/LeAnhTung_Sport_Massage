@@ -2,7 +2,7 @@
 
 > ⚠️ **ĐỌC FILE NÀY TRƯỚC KHI CODE BẤT KỲ THỨ GÌ TRONG DỰ ÁN NÀY**
 > File này cung cấp context tổng quan cho AI assistant hiểu trạng thái hiện tại của dự án.
-> Cập nhật lần cuối: 2026-08-12 (sau Phase 2)
+> Cập nhật lần cuối: 2026-08-21 (sau Phase 4 — Interactive KTV Card)
 
 ---
 
@@ -36,7 +36,7 @@ Website MVP demo cho dịch vụ **Sport Massage** (trị liệu chấn thương
 ```
 app/
 ├── layout.tsx              # Root layout (Header + main + Footer)
-├── page.tsx                # Landing page (next/Image)
+├── page.tsx                # Landing page (next/Image, KTV cards = clickable Link → /booking)
 ├── globals.css
 ├── booking/
 │   ├── page.tsx            # Stepper 4 bước (Client Component, next/Image)
@@ -130,6 +130,7 @@ lib/
 | Phase 1 | Booking module (stepper, availability, API, confirm, admin) | ✅ DONE |
 | Phase 2 | Admin auth + E-learning polish + Quick wins (next/Image, tags) | ✅ DONE |
 | Phase 3 | E-learning media thật + Loading skeletons + UI polish + Lint clean | ✅ DONE |
+| Phase 4 | Interactive KTV Card — clickable Link, isActive filter, aria-label, hover effects | ✅ DONE |
 
 ---
 
@@ -138,6 +139,7 @@ lib/
 - ℹ️ **Vercel KV production** — Để deploy Vercel với persistent KV, chỉ cần điền biến môi trường `KV_REST_API_URL` & `KV_REST_API_TOKEN` từ Upstash.
 - ℹ️ **Admin password** — Cấu hình qua `.env.local` (`ADMIN_PASSWORD=123456789`).
 - ℹ️ **Dữ liệu demo** — Đã có sẵn 5 KTV, 2 Dịch vụ, 4 Chương trình phục hồi với 11 video bài tập thật từ YouTube.
+- ℹ️ **KTV Card trang chủ** — Mỗi card KTV giờ là `<Link href="/booking">` clickable, có hover effects (nâng card, viền glow, CTA badge). Chỉ hiển thị KTV có `isActive: true`. **Scope chưa làm**: pre-select `therapistId` trên booking page khi navigate từ card (cần mở rộng `useSearchParams` trên booking/page.tsx).
 
 ---
 
