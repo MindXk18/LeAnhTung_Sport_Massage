@@ -1,6 +1,7 @@
-@import "tailwindcss";
+/* === index.css — Standalone Spec File === */
+/* This file contains the font-face and liquid-glass CSS as specified in the original prompt */
 
-/* === Helvetica Regular Font === */
+/* === Custom Font === */
 @font-face {
     font-family: "Helvetica Regular";
     src: url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.eot");
@@ -11,16 +12,9 @@
     url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.svg#Helvetica Regular")format("svg");
 }
 
-/* === Tailwind v4 Theme Override === */
-@theme {
+/* === Root Font Sans Variable === */
+:root {
   --font-sans: "Helvetica Regular", ui-sans-serif, system-ui, sans-serif;
-  --color-background: var(--color-slate-950);
-  --color-foreground: var(--color-slate-100);
-}
-
-/* === Smooth Scrolling === */
-html {
-  scroll-behavior: smooth;
 }
 
 /* === Liquid Glass Effect === */
